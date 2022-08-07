@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: dwr_venues
+    description: ""
+    columns:
+      - name: venue_id
+        description: "A unique identifier for this venue"
+        tests:
+         - not_null
+
+      - name: venue_name
+        description: "The name of the venue"
+
+      - name: city
+        description: "The city where the venue is located"
+
+      - name: country
+        description: "The country where the venue is located"
+
+      - name: longitude
+        description: "The longitude of the venue location"
+
+      - name: latitude
+        description: "The lattitude of the venue location"

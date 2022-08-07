@@ -1,0 +1,47 @@
+version: 2
+
+models:
+  - name: dwr_events
+    description: ""
+    columns:
+      - name: event_name
+        description: "The title of the event"
+
+      - name: time_event_created
+        description: "Timestamp of the moment the event was created by the organiser"
+
+      - name: time_event_start
+        description: "The timestamp of when the event will start (or has started)"
+
+      - name: event_status
+        description: "The status of the event. Possible values include ‘past’ and ‘upcoming’, meaning the the event has already taken place or that the event is planned for the future respectively"
+
+      - name: event_duration_hour
+        description: "The duration of the event, in hour(s)"
+
+      - name: rsvp_limit
+        description: "The maximum number of YES RSVPs that this event will allow"
+
+      - name: rsvps
+        description: "An array of RSVP objects containing user_id, when, response and guests"
+
+      - name: user_id
+        description: "The unique identifier of the user that RSVPed for this event"
+
+      - name: when
+        description: "Timestamp of the moment the user gave their RSVP"
+
+      - name: response
+        description: "Yes or No, the indication of whether this user will attend the event"
+
+      - name: guests
+        description: "If permitted, the number of guests that the user is planning to bring to the event"
+
+      - name: venue_id
+        description: "Unique identifier of the venue where this event takes place"
+
+      - name: group_id
+        description: "The unique identifier of the group that organised this event"
+
+      - name: description
+        description: "The description of the event"
