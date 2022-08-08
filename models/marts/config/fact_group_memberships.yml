@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: fact_group_memberships
+    description: ""
+    columns:
+      - name: user_key
+        description: ""
+
+      - name: group_key
+        description: ""
+
+      - name: time_user_joined
+        description: ""

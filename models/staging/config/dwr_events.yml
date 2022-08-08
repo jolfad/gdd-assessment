@@ -6,10 +6,13 @@ models:
     columns:
       - name: event_name
         description: "The title of the event"
+        tests:
+         - not_null
 
       - name: time_event_created
         description: "Timestamp of the moment the event was created by the organiser"
-
+        tests:
+          - not_null
       - name: time_event_start
         description: "The timestamp of when the event will start (or has started)"
 

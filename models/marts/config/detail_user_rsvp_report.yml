@@ -1,0 +1,80 @@
+version: 2
+
+models:
+  - name: detail_user_rsvp_report
+    description: ""
+    columns:
+      - name: event_name
+        description: ""
+
+      - name: time_event_created
+        description: ""
+
+      - name: time_event_start
+        description: ""
+
+      - name: event_status
+        description: ""
+
+      - name: event_duration_hour
+        description: ""
+
+      - name: rsvp_limit
+        description: ""
+
+      - name: responded_yes
+        description: ""
+
+      - name: responded_no
+        description: ""
+
+      - name: time_user_rsvp_response
+        description: ""
+
+      - name: day_rsvp_time_from_event_creation
+        description: ""
+
+      - name: day_rsvp_time_to_event_start
+        description: ""
+
+      - name: rsvp_guests
+        description: ""
+
+      - name: user_hometown
+        description: ""
+
+      - name: user_city
+        description: ""
+
+      - name: user_country
+        description: ""
+
+      - name: group_name
+        description: ""
+
+      - name: group_city
+        description: ""
+
+      - name: group_latitude
+        description: ""
+
+      - name: group_longitude
+        description: ""
+
+      - name: group_inception_date
+        description: ""
+
+      - name: venue_name
+        description: ""
+
+      - name: venue_city
+        description: ""
+
+      - name: venue_country
+        description: ""
+
+      - name: venue_latitude
+        description: ""
+
+      - name: venue_longitude
+        description: ""

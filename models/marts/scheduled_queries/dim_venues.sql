@@ -1,13 +1,13 @@
 SELECT
-    venue_id
-    , {{ dbt_utils.surrogate_key('venue_id') }} AS venue_key
-    , venue_name
-    , city
-    , country AS country_code
-    , dim_countries.country_name
-    , latitude
-    , longitude
-    , SAFE.ST_GEOGPOINT(latitude, longitude) AS venue_coordinates
-FROM {{ ref('dwr_venues') }}
-LEFT JOIN {{ ref('dim_countries') }}
-ON dwr_venues.country = dim_countries.country_code
+    venues.venue_id
+    , {{ dbt_utils.surrogate_key('venues.venue_id') }} AS venue_key
+    , venues.venue_name
+    , venues.city
+    , venues.country AS country_code
+    , countries.country_name
+    , venues.latitude
+    , venues.longitude
+    , SAFE.ST_GEOGPOINT(venues.latitude, venues.longitude) AS venue_coordinates
+FROM {{ ref('dwr_venues') }} AS venues
+LEFT JOIN {{ ref('dim_countries') }} AS countries
+ON venues.country = countries.country_code

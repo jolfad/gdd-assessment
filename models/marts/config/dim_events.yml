@@ -5,43 +5,43 @@ models:
     description: ""
     columns:
       - name: event_name
-        description: ""
+        description: "The title of the event"
 
       - name: event_key
-        description: ""
+        description: "Unique surrogate key for an event (We use event_name and time_event_created to generate this key)"
         tests:
             - not_null
             - unique
 
       - name: description
-        description: ""
+        description: "The description of the event"
 
       - name: time_event_created
-        description: ""
+        description: "Timestamp of the moment the event was created by the organiser"
 
       - name: time_event_start
-        description: ""
+        description: "The timestamp of when the event will start (or has started)"
 
       - name: event_status
-        description: ""
+        description: "The status of the event. Possible values include ‘past’ and ‘upcoming’, meaning the the event has already taken place or that the event is planned for the future respectively"
 
       - name: event_duration_hour
-        description: ""
+        description: "The duration of the event, in hour(s)"
 
       - name: rsvp_limit
-        description: ""
+        description: "The maximum number of YES RSVPs that this event will allow"
 
       - name: group_key
-        description: ""
+        description: "Foreign unique key for a group"
 
       - name: venue_key
-        description: ""
+        description: "Foreign unique key for a venue"
 
       - name: user_rsvps
-        description: ""
+        description: "An array of RSVP objects containing user_id, when, response and guests"
 
       - name: responded_yes
-        description: ""
+        description: "An indicator of whether is user RSVPd YES for an event"
 
       - name: responded_no
-        description: ""
+        description: "An indicator of whether is user RSVPd NO for an event"

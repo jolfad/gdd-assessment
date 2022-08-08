@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: agg_group_memberships
+    description: ""
+    columns:
+      - name: group_key
+        description: ""
+
+      - name: num_members
+        description: ""

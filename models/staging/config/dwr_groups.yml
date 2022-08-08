@@ -6,9 +6,12 @@ models:
     columns:
       - name: group_id
         description: "Unique identifier for this group"
+        tests:
+         - not_null
+         - unique
 
       - name: group_name
-        description: "Name of the grou"
+        description: "Name of the group"
 
       - name: description
         description: "Description of the group"
