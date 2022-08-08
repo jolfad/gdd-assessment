@@ -34,6 +34,7 @@ WITH events_base AS (
 , final AS (
     SELECT
         events_base.event_name
+        , {{ dbt_utils.surrogate_key(['events_base.event_name','events_base.time_event_created']) }} as event_key
         , events_base.description
         , events_base.time_event_created
         , events_base.time_event_start
@@ -48,7 +49,7 @@ WITH events_base AS (
     FROM events_base
     LEFT JOIN groups_base ON events_base.group_id = groups_base.group_id
     LEFT JOIN venues_base ON events_base.venue_id = venues_base.venue_id
-    {{ dbt_utils.group_by(9) }}
+    {{ dbt_utils.group_by(10) }}
 )
 
 SELECT * FROM final

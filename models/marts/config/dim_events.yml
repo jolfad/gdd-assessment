@@ -1,0 +1,47 @@
+version: 2
+
+models:
+  - name: fact_events
+    description: ""
+    columns:
+      - name: event_name
+        description: ""
+
+      - name: event_key
+        description: ""
+        tests:
+            - not_null
+            - unique
+
+      - name: description
+        description: ""
+
+      - name: time_event_created
+        description: ""
+
+      - name: time_event_start
+        description: ""
+
+      - name: event_status
+        description: ""
+
+      - name: event_duration_hour
+        description: ""
+
+      - name: rsvp_limit
+        description: ""
+
+      - name: group_key
+        description: ""
+
+      - name: venue_key
+        description: ""
+
+      - name: user_rsvps
+        description: ""
+
+      - name: responded_yes
+        description: ""
+
+      - name: responded_no
+        description: ""

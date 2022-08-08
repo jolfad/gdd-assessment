@@ -23,11 +23,15 @@ rsvp_events AS (
         , rsvp_events.event_status
         , rsvp_events.event_duration_hour
         , rsvp_events.rsvp_limit
+        , rsvp_events.responded_yes
+        , rsvp_events.responded_no
         , rsvp_events.time_user_rsvp_response
+        , TIMESTAMP_DIFF(rsvp_events.time_user_rsvp_response, rsvp_events.time_event_created, DAY) AS day_rsvp_time_from_event_creation
+        , TIMESTAMP_DIFF(rsvp_events.time_event_start, rsvp_events.time_user_rsvp_response, DAY) AS day_rsvp_time_to_event_start
         , rsvp_events.rsvp_guests
         , dim_users.hometown AS user_hometown
         , dim_users.city AS user_city
-        , dim_users.country AS user_country
+        , dim_users.country_name AS user_country
         , dim_groups.group_name
         , dim_groups.city AS group_city
         , dim_groups.latitude AS group_latitude
@@ -35,7 +39,7 @@ rsvp_events AS (
         , dim_groups.time_group_created AS group_inception_date
         , dim_venues.venue_name
         , dim_venues.city AS venue_city
-        , dim_venues.country AS venue_country
+        , dim_venues.country_name AS venue_country
         , dim_venues.latitude AS venue_latitude
         , dim_venues.longitude AS venue_longitude
     FROM rsvp_events
