@@ -6,9 +6,15 @@ models:
     columns:
       - name: group_id
         description: "Unique identifier for this group"
+        tests:
+         - not_null
+         - unique
 
       - name: group_key
         description: "Unique surrogate key for a group"
+        tests:
+         - not_null
+         - unique
 
       - name: group_name
         description: "Name of the group"

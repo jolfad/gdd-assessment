@@ -6,9 +6,15 @@ models:
     columns:
       - name: venue_id
         description: "A unique identifier for a venue"
+        tests:
+         - not_null
+         - unique
 
       - name: venue_key
         description: "Unique surrogate key for a venue"
+        tests:
+         - not_null
+         - unique
 
       - name: venue_name
         description: "The name of the venue"
