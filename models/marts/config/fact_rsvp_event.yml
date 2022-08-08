@@ -1,0 +1,53 @@
+version: 2
+
+models:
+  - name: fact_rsvp_events
+    description: ""
+    columns:
+      - name: event_name
+        description: ""
+
+      - name: time_event_created
+        description: ""
+
+      - name: time_event_start
+        description: ""
+
+      - name: event_status
+        description: ""
+
+      - name: event_duration_hour
+        description: ""
+
+      - name: rsvp_limit
+        description: ""
+
+      - name: day_rsvp_time_from_event_creation
+        description: ""
+
+      - name: day_rsvp_time_to_event_start
+        description: ""
+
+      - name: responded_yes
+        description: ""
+
+      - name: responded_no
+        description: ""
+
+      - name: time_user_rsvp_response
+        description: ""
+
+      - name: rsvp_guests
+        description: ""
+
+      - name: user_key
+        description: ""
+
+      - name: venue_key
+        description: ""
+
+      - name: group_key
+        description: ""
+
+      - name: event_key
+        description: ""

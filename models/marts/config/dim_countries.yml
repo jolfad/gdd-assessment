@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: dim_countries
+    description: ""
+    columns:
+      - name: country_name
+        description: "The name of a country"
+
+      - name: country_code
+        description: "The two character country code of a country"

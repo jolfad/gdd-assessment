@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: dim_topics
+    description: ""
+    columns:
+      - name: topic_key
+        description: "Unique surrogate key for a topic"
+
+      - name: topic_name
+        description: "The name of a topic (topics are interests a particular group has)"
+
+      - name: group_key
+        description: "Foreign unique key for a group"

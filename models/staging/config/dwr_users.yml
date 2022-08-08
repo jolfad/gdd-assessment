@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: dwr_users
+    description: ""
+    columns:
+      - name: user_id
+        description: "A unique identifier for a user"
+        tests:
+         - unique
+         - not_null
+
+      - name: hometown
+        description: "Town that the user specified as their home town"
+
+      - name: city
+        description: "City where the user resides"
+
+      - name: country
+        description: "Country where the user reside"
+
+      - name: memberships
+        description: "Array of membership objects containing group_id and joined"
+
+      - name: group_id
+        description: "The unique identifier of the group that the user has joined"
+
+      - name: joined
+        description: "Timestamp of the moment the user joined this group"

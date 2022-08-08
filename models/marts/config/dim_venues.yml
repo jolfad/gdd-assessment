@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: dim_venues
+    description: ""
+    columns:
+      - name: venue_id
+        description: "A unique identifier for a venue"
+        tests:
+         - not_null
+         - unique
+
+      - name: venue_key
+        description: "Unique surrogate key for a venue"
+        tests:
+         - not_null
+         - unique
+
+      - name: venue_name
+        description: "The name of the venue"
+
+      - name: city
+        description: "The city where the venue is located"
+
+      - name: country_code
+        description: "The country code of the country where the venue is located"
+
+      - name: country_name
+        description: "The country where the venue is located"
+
+      - name: latitude
+        description: "The latitude of the venue location"
+
+      - name: longitude
+        description: "The longitude of the venue location"
+
+      - name: venue_coordinates
+        description: "The coordinates of the venue location"

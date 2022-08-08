@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: agg_rsvp_metrics
+    description: ""
+    columns:
+      - name: venue_country
+        description: ""
+
+      - name: venue_city
+        description: ""
+
+      - name: month
+        description: ""
+
+      - name: event_duration
+        description: ""
+
+      - name: group_age_year
+        description: ""
+
+      - name: num_group_members
+        description: ""
+
+      - name: responded_yes
+        description: ""
+
+      - name: responded_no
+        description: ""
+
+      - name: perc_yes_response
+        description: ""
+
+      - name: day_rsvp_time_from_event_creation
+        description: ""
+
+      - name: day_rsvp_time_to_event_start
+        description: ""
+
+      - name: perc_attendance_rate
+        description: ""

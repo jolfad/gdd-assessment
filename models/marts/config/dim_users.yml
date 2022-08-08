@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: dim_users
+    description: ""
+    columns:
+      - name: user_id
+        description: "A unique identifier for a user"
+        tests:
+         - not_null
+         - unique
+
+      - name: user_key
+        description: "Unique surrogate key for a user"
+        tests:
+         - not_null
+         - unique
+
+      - name: hometown
+        description: "Town that the user specified as their home town"
+
+      - name: city
+        description: "City where the user resides"
+
+      - name: country_code
+        description: "Country code of the country where the user reside"
+
+      - name: country_name
+        description: "Country where the user reside"

@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: dim_groups
+    description: ""
+    columns:
+      - name: group_id
+        description: "Unique identifier for this group"
+        tests:
+         - not_null
+         - unique
+
+      - name: group_key
+        description: "Unique surrogate key for a group"
+        tests:
+         - not_null
+         - unique
+
+      - name: group_name
+        description: "Name of the group"
+
+      - name: description
+        description: "Description of the group"
+
+      - name: city
+        description: "Name of the city where the group resides"
+
+      - name: latitude
+        description: "Latitude of the place where the group resides"
+
+      - name: longitude
+        description: "Longitude of the place where the group resides"
+
+      - name: group_coordinates
+        description: "Coordinates of the group's location"
+
+      - name: time_group_created
+        description: "Timestamp of when the group was created"
+
+      - name: group_age_year
+        description: "The age of the group in year(s)"
+
+      - name: group_url
+        description: "Link to the group’s homepage"
