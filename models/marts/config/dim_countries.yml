@@ -5,7 +5,7 @@ models:
     description: ""
     columns:
       - name: country_name
-        description: ""
+        description: "The name of a country"
 
       - name: country_code
-        description: ""
+        description: "The two character country code of a country"
