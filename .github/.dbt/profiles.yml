@@ -1,0 +1,16 @@
+config:
+  use_colors: True
+  send_anonymous_usage_stats: False
+
+default:
+  outputs:
+    dev:
+      type: bigquery
+      method:  oauth
+      project: ggd-assessment-prod
+      dataset: ggd_assessment
+      threads: 1
+      timeout_seconds: 300
+      priority: interactive
+
+  target: dev

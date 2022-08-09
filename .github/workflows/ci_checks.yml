@@ -1,0 +1,59 @@
+name: CI checks
+
+on:
+  push:
+    branches:
+      - 'feature/**'
+      - 'hotfix/**'
+    tags:
+      - 'v*'
+
+jobs:
+  ci-checks:
+    name: ci-checks
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 4
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        # Checkout all commits, branches and tags
+        fetch-depth: 0
+
+    - name: Set service account
+      uses: google-github-actions/setup-gcloud@v0
+      with:
+          project_id: "com-ridedott-data-staging"
+          service_account_email: "dbt-ggd@gdd-assessment-prod.iam.gserviceaccount.com"
+          service_account_key: ${{ secrets.GDD_GOOGLE_CREDENTIALS }}
+          export_default_credentials: true
+
+    - name: Set up Python 
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
+
+    - name: Install dbt dependencies
+      run: | 
+        pip install dbt-bigquery==1.0.0
+        dbt deps
+
+    - name: Set up pre-commit cache
+      run: echo "PY=$(python -VV | sha256sum | cut -d' ' -f1)" >> $GITHUB_ENV
+    
+    - uses: actions/cache@v1
+      with:
+        path: ~/.cache/pre-commit
+        key: pre-commit|${{ env.PY }}|${{ hashFiles('.pre-commit-config.yaml') }}
+
+    - name: Run pre-commit checks
+      run: |
+        pip install pre-commit==2.15.0
+        # Run SQLFluff only diff only for faster CI.
+        pre-commit run --from-ref origin/main --to-ref HEAD
+      env:
+        SKIP: sqlfluff-fix
