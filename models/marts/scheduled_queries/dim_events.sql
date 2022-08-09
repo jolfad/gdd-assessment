@@ -34,7 +34,7 @@ WITH events_base AS (
 , final AS (
     SELECT
         events_base.event_name
-        , {{ dbt_utils.surrogate_key(['events_base.event_name','events_base.time_event_created']) }} as event_key
+        , {{ dbt_utils.surrogate_key(['events_base.event_name','events_base.time_event_created']) }} AS event_key
         , events_base.description
         , events_base.time_event_created
         , events_base.time_event_start

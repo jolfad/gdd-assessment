@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: fact_events
+  - name: dim_events
     description: ""
     columns:
       - name: event_name

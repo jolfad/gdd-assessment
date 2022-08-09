@@ -59,11 +59,11 @@ AS (
         , unnest_events.event_status
         , unnest_events.event_duration_hour
         , unnest_events.rsvp_limit
-        , TIMESTAMP_DIFF(unnest_events.time_user_rsvp_response, unnest_events.time_event_created, DAY) AS day_rsvp_time_from_event_creation
-        , TIMESTAMP_DIFF(unnest_events.time_event_start, unnest_events.time_user_rsvp_response, DAY) AS day_rsvp_time_to_event_start
-        , CASE WHEN response='yes' then 1 else 0 end as responded_yes
-        , CASE WHEN response='no' then 1 else 0 end as responded_no
-        , time_user_rsvp_response
+        , timestamp_diff(unnest_events.time_user_rsvp_response, unnest_events.time_event_created, DAY) AS day_rsvp_time_from_event_creation
+        , timestamp_diff(unnest_events.time_event_start, unnest_events.time_user_rsvp_response, DAY) AS day_rsvp_time_to_event_start
+        , CASE WHEN unnest_events.response = 'yes' THEN 1 ELSE 0 END AS responded_yes
+        , CASE WHEN unnest_events.response = 'no' THEN 1 ELSE 0 END AS responded_no
+        , unnest_events.time_user_rsvp_response
         , unnest_events.guests AS rsvp_guests
         , users_base.user_key
         , venues_base.venue_key
@@ -74,7 +74,7 @@ AS (
     LEFT JOIN venues_base ON unnest_events.venue_id = venues_base.venue_id
     LEFT JOIN users_base ON unnest_events.user_id = users_base.user_id
     LEFT JOIN events_base ON unnest_events.event_name = events_base.event_name
-    AND unnest_events.time_event_created = events_base.time_event_created
+        AND unnest_events.time_event_created = events_base.time_event_created
 )
 
 SELECT * FROM final

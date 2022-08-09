@@ -1,7 +1,7 @@
 WITH unnest_topics AS (
     SELECT
         group_id
-, topics AS topic
+        , topics AS topic
     FROM {{ ref('dwr_groups') }}
     CROSS JOIN
         unnest(topics) AS topics
@@ -10,7 +10,7 @@ WITH unnest_topics AS (
 , get_group_key AS (
     SELECT
         group_id
-, group_key
+        , group_key
     FROM {{ ref('dim_groups') }}
 )
 
