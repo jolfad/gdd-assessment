@@ -22,7 +22,6 @@ repos:
       - id: dbt-compile
         args: [ "--cmd-flags", "++profiles-dir", ".github/.dbt", "--"]
       - id: check-script-semicolon
-      - id: check-script-has-no-table-name
       - id: check-script-ref-and-source
       - id: check-model-has-properties-file
 

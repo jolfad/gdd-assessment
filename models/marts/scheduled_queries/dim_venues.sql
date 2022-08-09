@@ -10,4 +10,4 @@ SELECT
     , SAFE.ST_GEOGPOINT(venues.latitude, venues.longitude) AS venue_coordinates
 FROM {{ ref('dwr_venues') }} AS venues
 LEFT JOIN {{ ref('dim_countries') }} AS countries
-ON venues.country = countries.country_code
+    ON venues.country = countries.country_code

@@ -1,4 +1,4 @@
-select 
-name as country_name,
-alpha_2 as country_code
- from {{ ref('countries_info') }}
+SELECT
+    name AS country_name
+    , alpha_2 AS country_code
+FROM {{ ref('countries_info') }}
